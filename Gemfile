@@ -8,6 +8,8 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
+gem 'haml', '~> 5.0', '>= 5.0.4'
+gem 'haml-rails', '~> 1.0'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
