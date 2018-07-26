@@ -1,3 +1,7 @@
-- provide(:title, 'Home')
-%h1 Hartl turorial
-%p This is an app made to learn ROR
+.center.jumbotron
+  - provide(:title, 'Home')
+
+  %h1 Hartl turorial
+  %p This is an app made to learn RoR
+
+  = link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary'

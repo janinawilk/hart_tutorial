@@ -1,20 +1,22 @@
 source 'https://rubygems.org'
 
-gem 'rails'
-gem 'puma'
-gem 'sass-rails'
-gem 'uglifier'
+gem 'bootstrap-sass'
 gem 'coffee-rails'
-gem 'jquery-rails'
-gem 'turbolinks'
 gem 'jbuilder'
+gem 'jquery-rails'
 gem 'haml', '~> 5.0', '>= 5.0.4'
 gem 'haml-rails', '~> 1.0'
+gem 'puma'
+gem 'rails'
+gem 'sass-rails'
+gem 'turbolinks'
+gem 'uglifier'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.6', platform: :mri
+  gem 'capybara'
   gem 'rspec-rails'
+  gem 'sqlite3', '1.3.13'
 end
 
 group :development do
@@ -28,6 +30,7 @@ group :test do
   gem 'rails-controller-testing'
   gem 'guard'
   gem 'guard-minitest'
+  gem 'simplecov', '~> 0.16.1', require: false
 end
 
 group :production do
