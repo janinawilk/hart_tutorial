@@ -13,10 +13,12 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'turbolinks'
 gem 'uglifier'
+gem 'pry'
 
 group :development, :test do
   gem 'byebug',  '9.0.6', platform: :mri
   gem 'capybara'
+  gem 'factory_bot_rails', '~> 4.10'
   gem 'rspec-rails'
   gem 'sqlite3', '1.3.13'
 end
