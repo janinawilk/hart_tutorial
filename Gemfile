@@ -10,6 +10,7 @@ gem 'haml-rails', '~> 1.0'
 gem 'puma'
 gem 'rails'
 gem 'sass-rails'
+gem 'simple_form'
 gem 'turbolinks'
 gem 'uglifier'
 
