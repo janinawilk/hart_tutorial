@@ -1,4 +1,6 @@
 = simple_form_for :session, url: login_path do |f|
   = f.input :email
   = f.input :password
+  = f.input :remember_me do
+    = f.check_box :remember_me, require: false
   = f.button :submit, 'Log in'

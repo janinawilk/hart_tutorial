@@ -21,6 +21,13 @@ RSpec.feature "User", type: :feature do
       expect(page).to have_link 'Profile'
       expect(page).not_to have_link 'Log in'
       # expect(is_logged_in?).to be_truthy
+      # expect(cookies['remember_token'].empty?).to be_truthy
+    end
+
+    scenario 'in is successful with remember_me checked' do
+      fill_in 'Password', with: 'napoleon99'
+      check 'Remember me'
+      click_button 'Log in'
     end
 
     scenario 'in is not successful' do

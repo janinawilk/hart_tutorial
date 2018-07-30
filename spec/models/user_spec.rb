@@ -50,21 +50,29 @@ RSpec.describe User, type: :model do
     end
   end
 
-  context 'valid email validations'
+  context 'valid email validations' do
     valid_addresses = %w[user@example.com USER@foo.pl A_b-g@foo.bar.pl fiRSt.petr99@bar.jj foo+bar@pop.org]
     valid_addresses.each do |valid_address|
       it "is valid with #{valid_address}" do
         user.email = valid_address
         expect(user.valid?).to be_truthy
+      end
     end
   end
 
-  context 'invalid email validations'
-    valid_addresses = %w[user@example,com USERfoo.pl A_b-g@foo-pl fiRSt.petr99@ @pop.org]
-    valid_addresses.each do |valid_address|
-      it "is invalid with #{valid_address}" do
-        user.email = valid_address
+  context 'invalid email validations' do
+    invalid_addresses = %w[user@example,com USERfoo.pl A_b-g@foo-pl fiRSt.petr99@ @pop.org]
+    invalid_addresses.each do |invalid_address|
+      it "is invalid with #{invalid_address}" do
+        user.email = invalid_address
         expect(user.valid?).to be_falsey
+      end
+    end
+  end
+
+  context 'checks for authentication when user logged out in other browser' do
+    it 'is not authenticated when digest is nil' do
+      expect(user.authenticated?('')).to be_falsey
     end
   end
 end
