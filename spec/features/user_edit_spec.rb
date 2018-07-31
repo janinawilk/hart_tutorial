@@ -5,7 +5,7 @@ RSpec.feature "User", type: :feature do
     before(:each) do
       @user = create(:user)
       visit '/login'
-      fill_in 'Email', with: 'napoleon@example.com'
+      fill_in 'Email', with: @user.email
       fill_in 'Password', with: 'napoleon99'
       click_button 'Log in'
       click_link 'Account'

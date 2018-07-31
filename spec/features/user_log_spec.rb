@@ -10,7 +10,7 @@ RSpec.feature "User", type: :feature do
     before(:each) do
       @user = create(:user)
       visit '/login'
-      fill_in 'Email', with: 'napoleon@example.com'
+      fill_in 'Email', with: @user.email
     end
 
     scenario 'in is successful' do
@@ -20,8 +20,6 @@ RSpec.feature "User", type: :feature do
       expect(page).to have_link 'Log out'
       expect(page).to have_link 'Profile'
       expect(page).not_to have_link 'Log in'
-      # expect(is_logged_in?).to be_truthy
-      # expect(cookies['remember_token'].empty?).to be_truthy
     end
 
     scenario 'in is successful with remember_me checked' do

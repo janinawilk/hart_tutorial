@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 
 gem 'bcrypt'
 gem 'bootstrap-sass'
+gem 'bootstrap-will_paginate'
 gem 'coffee-rails'
+gem 'faker', '~> 1.9', '>= 1.9.1'
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'haml', '~> 5.0', '>= 5.0.4'
@@ -14,6 +16,7 @@ gem 'simple_form'
 gem 'turbolinks'
 gem 'uglifier'
 gem 'pry'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug',  '9.0.6', platform: :mri
