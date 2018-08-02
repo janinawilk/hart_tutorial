@@ -13,19 +13,17 @@ class UsersController < ApplicationController
   end
 
   def create
-    # binding.pry
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
       redirect_to root_path, notice: 'Please check your email to activate your account'
-      # binding.pry
     else
       render :new
     end
   end
 
   def show
-    redirect_to root_path and return unless @user.activated?
+    (redirect_to root_path) && return unless @user.activated?
   end
 
   def update

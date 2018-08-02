@@ -15,10 +15,12 @@ class User < ApplicationRecord
   end
 
   def User.digest(string)
-    #FIXME split ternary into multiple lines
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                  BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost: cost)
+    if cost = ActiveModel::SecurePassword.min_cost
+      BCrypt::Engine::MIN_COST
+    else
+      BCrypt::Engine.cost
+    end
+      BCrypt::Password.create(string, cost: cost)
   end
 
   def remember
