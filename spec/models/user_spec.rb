@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) {User.new(name: 'User', email: 'user@example.com', password: 'foobar', password_confirmation: 'foobar')}
+  let(:user) { create(:user)}
 
   context 'general validations' do
     it 'is valid' do
@@ -72,7 +72,7 @@ RSpec.describe User, type: :model do
 
   context 'checks for authentication when user logged out in other browser' do
     it 'is not authenticated when digest is nil' do
-      expect(user.authenticated?('')).to be_falsey
+      expect(user.authenticated?(:remember, '')).to be_falsey
     end
   end
 end

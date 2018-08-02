@@ -22,11 +22,11 @@ RSpec.feature "User", type: :feature do
       expect(page).not_to have_link 'Log in'
     end
 
-    scenario 'in is successful with remember_me checked' do
-      fill_in 'Password', with: 'napoleon99'
-      check 'Remember me'
-      click_button 'Log in'
-    end
+    # scenario 'in is successful with remember_me checked' do
+    #   fill_in 'Password', with: 'napoleon99'
+    #   check 'Remember me'
+    #   click_button 'Log in'
+    # end
 
     scenario 'in is not successful' do
       click_button 'Log in'

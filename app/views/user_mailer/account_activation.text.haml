@@ -1,6 +1,6 @@
 UserMailer#account_activation
 
-= 'Hi' + @user.name
+= 'Hello' + @user.name
 = 'Click on the link below to activate account:'
 
 = edit_account_activation_url(@user.activation_token, email: @user.email)

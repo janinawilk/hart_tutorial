@@ -12,7 +12,8 @@ RSpec.feature "User", type: :feature do
     scenario 'is successful' do
       fill_in 'Name', with: 'napoleon'
       click_button 'Create User'
-      expect(page).to have_content 'User was created'
+      expect(page).to have_content 'Please check your email to activate your account'
+      user = User.find_by(email: 'napoleon@example.com')
     end
 
     scenario 'is successful and checks for user count' do
