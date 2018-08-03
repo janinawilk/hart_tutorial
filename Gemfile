@@ -21,22 +21,24 @@ gem 'will_paginate'
 group :development, :test do
   gem 'byebug',  '9.0.6', platform: :mri
   gem 'capybara'
+  gem 'capybara-email'
   gem 'factory_bot_rails', '~> 4.10'
   gem 'rspec-rails'
   gem 'sqlite3', '1.3.13'
 end
 
 group :development do
-  gem 'web-console',           '3.5.1'
   gem 'listen',                '3.1.5'
   gem 'spring',                '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'
+  gem 'web-console',           '3.5.1'
 end
 
 group :test do
-  gem 'rails-controller-testing'
+  gem 'database_cleaner'
   gem 'guard'
   gem 'guard-minitest'
+  gem 'rails-controller-testing'
   gem 'simplecov', '~> 0.16.1', require: false
 end
 

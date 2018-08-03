@@ -63,6 +63,9 @@ GEM
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
       xpath (~> 3.1)
+    capybara-email (3.0.1)
+      capybara (>= 2.4, < 4.0)
+      mail
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -73,6 +76,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
+    database_cleaner (1.7.0)
     diff-lcs (1.3)
     docile (1.3.1)
     erubi (1.7.1)
@@ -278,7 +282,9 @@ DEPENDENCIES
   bootstrap-will_paginate
   byebug (= 9.0.6)
   capybara
+  capybara-email
   coffee-rails
+  database_cleaner
   factory_bot_rails (~> 4.10)
   faker (~> 1.9, >= 1.9.1)
   guard
