@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'aws-sdk-s3', require: false
 gem 'bcrypt'
 gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate'

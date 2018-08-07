@@ -94,4 +94,16 @@ RSpec.describe User, type: :model do
       expect(user.authenticated?(:remember, '')).to be_falsey
     end
   end
+
+  context 'following and unfollowing' do
+    let(:other_user) { create(:other_user) }
+
+    it 'is successful' do
+      expect(user.following?(other_user)).to be_falsey
+      user.follow(other_user)
+      expect(user.following?(other_user)).to be_truthy
+      user.unfollow(other_user)
+      expect(user.following?(other_user)).to be_falsey
+    end
+  end
 end

@@ -21,3 +21,16 @@ users = User.order(:created_at).take(6)
   content = Faker::Lorem.sentence(5)
   users.each { |user| user.microposts.create!(content: content) }
 end
+
+users = User.all
+user = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each do |followed|
+  puts "user follows #{followed.email}"
+  user.follow(followed)
+end
+followers.each do |follower|
+  puts "#{follower.email} follows user"
+  follower.follow(user) 
+end
