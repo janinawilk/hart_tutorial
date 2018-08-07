@@ -42,7 +42,7 @@ RSpec.feature "User", type: :feature do
       fill_in 'Email', with: 'alexander@example.com'
       fill_in 'Password', with: 'alexander100'
       click_button 'Log in'
-      expect(page).to have_content 'Edit your profile'
+      expect(page).to have_content 'Edit Profile'
     end
 
     scenario 'is successful after redirect when was logged in as user' do
@@ -54,7 +54,7 @@ RSpec.feature "User", type: :feature do
       fill_in 'Email', with: 'alexander@example.com'
       fill_in 'Password', with: 'alexander100'
       click_button 'Log in'
-      expect(page).to have_content 'Edit your profile'
+      expect(page).to have_content 'Edit Profile'
     end
   end
 end

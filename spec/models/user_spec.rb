@@ -1,13 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { create(:user)}
-  let(:micropost) { create(:micropost)}
-
+  let(:user) { create(:user_with_microposts)}
   context 'microposts' do
 
     it 'should be destroyed with user' do
-      expect { user.destroy }.to change(Micropost, :count).by(-1)
+      user
+      expect { user.destroy }.to change(Micropost, :count).by(-user.microposts.count)
     end
   end
 
