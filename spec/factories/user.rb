@@ -7,6 +7,17 @@ FactoryBot.define do
     activated true
     activated_at Time.zone.now
   end
+  factory :user_with_microposts, class: User do
+    name 'mikropostowiec'
+    email 'mikropostowiec@example.com'
+    password 'napoleon99'
+    password_confirmation 'napoleon99'
+    activated true
+    activated_at Time.zone.now
+    after :create do |user|
+      create_list :micropost, 50, user: user
+    end
+  end
 
   factory :other_user, class: User do
     name 'alexander'

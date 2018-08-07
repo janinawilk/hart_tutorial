@@ -1,0 +1,4 @@
+= simple_form_for @micropost do |f|
+  = f.input :content, placeholder: "Compose new micropost..."
+  = f.button :submit
+  = f.input :image, as: :file

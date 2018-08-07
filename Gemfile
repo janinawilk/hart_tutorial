@@ -5,6 +5,7 @@ gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate'
 gem 'coffee-rails'
 gem 'faker', '~> 1.9', '>= 1.9.1'
+gem 'image_processing'
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'haml', '~> 5.0', '>= 5.0.4'
@@ -28,6 +29,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'guard-rspec', require: false
   gem 'listen',                '3.1.5'
   gem 'spring',                '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'

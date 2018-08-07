@@ -1,7 +1,6 @@
-.center.jumbotron
-  - provide(:title, 'Home')
+- provide(:title, 'Home')
 
-  %h1 Hartl turorial
-  %p This is an app made to learn RoR
-
-  = link_to 'Sign up now!', signup_path, class: 'btn btn-lg btn-primary'
+- if logged_in?
+  = render 'static_pages/logged_in'
+- else
+  = render 'static_pages/not_logged_in'
