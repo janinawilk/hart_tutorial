@@ -1,14 +1,16 @@
 - provide(:title, @user.name)
-
 .row
   %aside.col-md-4
-    = @user.name + ','
-    = @user.email
-
+    %section
+      %h1
+        = @user.name
+    %section.stats
+      = render 'shared/stats'
   .col-md-8
+    = render 'follow_form' if logged_in?
     - if @user.microposts.any?
       %h3
-        Microposts
-      %ul.microposts
+        Microposts (#{@user.microposts.count})
+      %ol.microposts
         = render @microposts
       = will_paginate @microposts

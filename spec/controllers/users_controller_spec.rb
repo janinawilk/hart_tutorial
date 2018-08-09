@@ -16,6 +16,15 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
+  describe 'GET following/follower' do
+    let(:user) { create(:user) }
+
+    it 'following redirects when user not logged in' do
+      get following_user_path(user)
+      expect(response).to have_http_status(302)
+    end
+  end
+
   describe 'PATCH #delete ' do
     let!(:users) { create_list(:user, 40) }
 
@@ -44,7 +53,6 @@ RSpec.describe UsersController, type: :controller do
         admin: true
       }
     end
-
 
     it 'is unsuccessful' do
       session[:user_id] = user.id
