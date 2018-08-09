@@ -13,7 +13,8 @@ User.create!(name:                  'Example user',
   User.create!(name:                  name,
                email:                 email,
                password:              password,
-               password_confirmation: password)
+               password_confirmation: password,
+               activated:             true)
 end
 
 users = User.order(:created_at).take(6)
@@ -32,5 +33,5 @@ following.each do |followed|
 end
 followers.each do |follower|
   puts "#{follower.email} follows user"
-  follower.follow(user) 
+  follower.follow(user)
 end

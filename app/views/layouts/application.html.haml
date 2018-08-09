@@ -1,6 +1,5 @@
 !!!
 %html
-
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title= full_title(yield(:title))
@@ -11,12 +10,11 @@
     = render 'layouts/shim'
   %body
     = render 'layouts/header'
-    %center
-      .container
-        .content
-          - if notice
-            %p.alert.alert-success= notice
-          - if alert
-            %p.alert.alert-danger= alert
-          = yield
-      = render 'layouts/footer'
+    .container
+      .content
+        - if notice
+          %p.alert.alert-success= notice
+        - if alert
+          %p.alert.alert-danger= alert
+        = yield
+    = render 'layouts/footer'
